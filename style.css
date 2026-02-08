@@ -132,6 +132,7 @@ body {
 .car__pricing__content{ 
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .card__annual { 
@@ -185,4 +186,10 @@ body {
 
 .card__cancel--button:hover { 
     color: var(--Blue-900);
+}
+
+@media (max-width: 600px) { 
+    .card__content { 
+        padding: 1.5rem;
+    }
 }
