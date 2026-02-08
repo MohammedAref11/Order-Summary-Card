@@ -1,0 +1,188 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@font-face {
+  font-family: "RedHatDisplay-black";
+  src: url("./fonts/RedHatDisplay-Black.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "RedHatDisplay-bold";
+  src: url("./fonts/RedHatDisplay-Bold.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "RedHatDisplay-medium";
+  src: url("./fonts/RedHatDisplay-Medium.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+}
+
+p { 
+    font-family: "RedHatDisplay-medium";
+    font-weight: 500;
+}
+
+:root {
+  /*  Primary */
+
+  --Blue-100: hsl(225, 100%, 94%);
+  --Blue-700: hsl(245, 75%, 52%);
+
+  /* Neutral */
+
+  --Blue-50: hsl(225, 100%, 98%);
+  --Gray-600: hsl(224, 23%, 55%);
+  --Blue-950: hsl(223, 47%, 23%);
+}
+
+body {
+  background-color: var(--Blue-100);
+  font-family: "RedHatDisplay-medium";
+  background-image: url("./images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.card-container {
+  background-color: var(--Blue-50);
+  border-radius: 20px;
+  max-width: 450px;
+}
+
+.card-container img { 
+    border-radius: 20px 20px 0px 0px;
+}
+
+.card__content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.card__title { 
+    font-size: 28px;
+    font-family: "RedHatDisplay-black";
+    font-weight: 900;
+    color: var(--Blue-950);
+}
+
+.card__description { 
+    color:hsl(224, 23%, 55%); 
+    line-height: 1.5;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.card__pricing { 
+    background-color: hsla(225, 100%, 94%, 0.5);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.car__pricing__content{ 
+    display: flex;
+    gap: 1rem;
+}
+
+.card__annual { 
+    font-size: 1.1rem;
+    margin-bottom: 0.2em;
+    color: var(--Blue-950);
+}
+
+.card__price { 
+    color: var(--Gray-600); 
+}
+
+.card__change { 
+    color: var(--Blue-700);
+    font-weight: 600;
+}
+
+.card__change:hover { 
+    color:hsla(245, 75%, 52%, 0.7);
+}
+.card__buttons { 
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card__proceed--button { 
+    background-color: var(--Blue-700);
+    color: var(--Blue-50);
+    font-weight: 600;
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.card__proceed--button:hover { 
+    background-color: hsla(245, 75%, 52%, 0.7);
+}
+
+.card__cancel--button { 
+    background-color: var(--Blue-50);
+    border: none;
+    color: var(--Gray-600);
+    font-weight: bold;   
+    cursor: pointer;
+    width: fit-content;
+    margin: 0 auto; 
+}
+
+.card__cancel--button:hover { 
+    color: var(--Blue-900);
+}
